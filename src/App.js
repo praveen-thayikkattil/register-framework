@@ -1,20 +1,15 @@
 import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import Body from "./Body";
 import "./App.scss";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <buttton
-          className="register-c2a-button"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Register
-        </buttton>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Body className="App-body" />
+      </div>
+    </BrowserRouter>
   );
 }
 

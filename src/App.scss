@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-.App-header {
+.App-body {
   background-color: #eee;
   min-height: 100vh;
   display: flex;
@@ -11,6 +11,9 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  > h1 {
+    color: #999;
+  }
 }
 
 .register-c2a-button {
@@ -21,13 +24,16 @@
   padding: 15px 40px;
   font-size: 22px;
   font-weight: bold;
+  text-decoration: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.list-inline {
+  display: flex;
+  list-style: none;
+  > li {
+    padding: 0 10px;
+    a {
+      text-decoration: none;
+    }
   }
 }
