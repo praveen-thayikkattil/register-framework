@@ -3,7 +3,7 @@
 }
 
 .App-body {
-  background-color: #999;
+  background-color: #fff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -34,6 +34,120 @@
     padding: 0 10px;
     a {
       text-decoration: none;
+    }
+  }
+}
+
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  min-width: 100%;
+  padding: 20px;
+  .fieldset {
+    color: black;
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    &.fieldset-newsletter-choice {
+      display: block;
+      flex: 1 1 0;
+      text-align: left;
+      .control-label {
+        display: block;
+        text-align: left;
+        padding-left: 40px;
+      }
+    }
+    .control-label {
+      flex: 0 0 200px;
+      label {
+        text-align: right;
+      }
+    }
+    > div {
+      flex: 1 1 0;
+      width: 90%;
+    }
+  }
+  .form-submit-button {
+    // width: 150px !important;
+    // flex: 0 !important;
+    // display: inline-block !important;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding: 15px 40px;
+  }
+}
+
+.textAreaAutosize-wrapper {
+  textarea {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.fieldset-name {
+  .first-name-input {
+    margin-right: 5px;
+  }
+  .last-name-input {
+    margin-left: 5px;
+  }
+}
+
+.profile-page {
+  color: black;
+  display: grid;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  grid-template-columns: 300px auto;
+  grid-template-rows: 100% 100%;
+  .sidebar {
+    // background: rgba(yellow, 30%);
+    height: 100%;
+    padding: 40px 20px 20px 20px;
+    border-right: 1px solid black;
+    .inner-wrap {
+      .avatar-wrap {
+        .the-img {
+          height: 100px;
+          width: 100px;
+          background: #ddd;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+    }
+    footer {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      flex-direction: column;
+      align-content: center;
+      justify-content: center;
+      align-items: center;
+      button {
+        background: none;
+        border: none;
+        color: royalblue;
+        text-decoration: underline;
+        margin-top: 20px;
+        display: inline-block;
+      }
+    }
+  }
+  .main-content {
+    // background: rgba(pink, 30%);
+    height: 100%;
+    padding: 20px;
+    p {
+      font-size: smaller;
+      span {
+        color: royalblue;
+      }
     }
   }
 }
