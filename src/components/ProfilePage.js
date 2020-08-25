@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-// import { withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
+import PropTypes from "prop-types";
 import Button from "@material-ui/core/Button";
 
 class ProfilePage extends Component {
@@ -81,6 +82,10 @@ class ProfilePage extends Component {
     );
   }
 }
+
+ProfilePage.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
 export default ProfilePage;
 // export default withRouter(connect({}, {})(ProfilePage));
