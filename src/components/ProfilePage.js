@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import Button from "@material-ui/core/Button";
 
@@ -18,6 +17,7 @@ class ProfilePage extends Component {
 
   componentDidMount() {
     console.log(this.props);
+    console.log(this.state);
   }
   render() {
     return (
@@ -44,8 +44,11 @@ class ProfilePage extends Component {
 
         <main className="main-content">
           <p>
-            I am <span>Mr. David Miller</span> and I am{" "}
-            <span>above 20 years</span> and you can send your emails to{" "}
+            I am{" "}
+            <span>
+              {this.state.firstName} {this.state.lastName} Mr. David Miller
+            </span>{" "}
+            and I am <span>above 20 years</span> and you can send your emails to{" "}
             <span>jesus@heaven.com</span>.I live in the state of Alaska. I like
             to <span>play hockey, football and reading</span> books. And please
             send me the newsletters. Please reach out to me on my phone
@@ -84,7 +87,7 @@ class ProfilePage extends Component {
 }
 
 ProfilePage.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+  data: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default ProfilePage;

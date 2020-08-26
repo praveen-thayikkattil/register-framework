@@ -1,0 +1,40 @@
+import * as types from "../constants/actionTypes";
+import initialState from "./initialState";
+
+export default function formFillPageItems(
+  state = initialState.formFillPageItems,
+  action
+) {
+  let currentFormFillPageItems;
+
+  switch (action.type) {
+    case types.GET_FORMFILLPAGEITEMS_INPROGRESS:
+      currentFormFillPageItems = {
+        ...state,
+        inProgress: true,
+        isSuccess: false,
+      };
+
+      return currentFormFillPageItems;
+
+    case types.GET_FORMFILLPAGEITEMS_SUCCESS:
+      return {
+        ...state,
+        inProgress: false,
+        isSuccess: true,
+        items: action.formFillPageItems[0],
+      };
+
+    case types.GET_FORMFILLPAGEITEMS_FAILURE:
+      currentFormFillPageItems = {
+        ...state,
+        inProgress: false,
+        isSuccess: false,
+      };
+
+      return currentFormFillPageItems;
+
+    default:
+      return state;
+  }
+}

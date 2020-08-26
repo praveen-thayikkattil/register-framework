@@ -1,4 +1,4 @@
 export default {
-  profilePageItems: {},
-  formFillPageItems: {},
+  profilePageItems: [],
+  formFillPageItems: [],
 };

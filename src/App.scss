@@ -38,45 +38,69 @@
   }
 }
 
+.registration-form-wrapper {
+  width: 100%;
+}
 .registration-form {
   display: flex;
   flex-direction: column;
   min-width: 100%;
   padding: 20px;
   .fieldset {
-    color: black;
-    display: flex;
-    align-items: center;
-    margin: 20px;
-    &.fieldset-newsletter-choice {
-      display: block;
-      flex: 1 1 0;
-      text-align: left;
+    width: 75%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    align-self: center;
+    .input-wrapper {
+      display: flex;
+      align-items: center;
+      align-content: center;
+      flex-wrap: nowrap;
+      flex-direction: row;
+      padding-bottom: 20px;
       .control-label {
-        display: block;
-        text-align: left;
-        padding-left: 40px;
-      }
-    }
-    .control-label {
-      flex: 0 0 200px;
-      label {
         text-align: right;
+        width: 25%;
+        padding-right: 30px;
+        label {
+          font-size: 24px;
+          word-wrap: unset;
+          line-height: 60px;
+          margin: 0;
+          padding: 0;
+        }
       }
-    }
-    > div {
-      flex: 1 1 0;
-      width: 90%;
+      .text-input {
+        margin: 0;
+        width: 75%;
+        margin-left: 10px;
+      }
+
+      .select-input {
+        margin: 0;
+        width: 75%;
+        margin-left: 10px;
+        text-align: center;
+      }
+
+      .age-range-slider {
+        margin-left: 10px;
+        width: 75%;
+      }
     }
   }
   .form-submit-button {
     // width: 150px !important;
     // flex: 0 !important;
     // display: inline-block !important;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+    // margin-left: auto;
+    // margin-right: auto;
+    // text-align: center;
     padding: 15px 40px;
+    // align-self: flex-start;
+    display: inline-block;
+    width: 150px;
   }
 }
 
@@ -149,5 +173,15 @@
         color: royalblue;
       }
     }
+  }
+}
+
+.register-page {
+  color: black;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  .page-title {
+    font-size: 30px;
   }
 }

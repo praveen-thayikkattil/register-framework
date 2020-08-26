@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import * as getProfilePageItemsAction from "../actions/profilePageItems";
 import { default as ProfilePageUI } from "../components/ProfilePage";
 
-class PortfolioPageView extends Component {
+class ProfilePageView extends Component {
   componentWillMount() {
     this.props.getProfilePageItemsAction.getProfilePageItems();
   }
@@ -26,6 +26,7 @@ class PortfolioPageView extends Component {
 }
 
 function mapStateToProps(state, ownProps) {
+  console.log(state);
   return {
     profilePageItems: state.profilePageItems,
   };
@@ -40,4 +41,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(PortfolioPageView);
+export default connect(mapStateToProps, mapDispatchToProps)(ProfilePageView);

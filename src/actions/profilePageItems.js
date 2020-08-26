@@ -6,21 +6,28 @@ import appConfig from "../appConfig.json";
 export const getProfilePageItems = () => {
   return (dispatch) => {
     let profilePageItems = [];
-    const url = `http://${appConfig.env} === 'dev' ? 'localhost/pit-rnd2' || 'localhost/register-framework' : 'api.where.you.are.hosting.this.app.com'`;
-    dispatch({ type: types.GET_PROFILEPAGE_INPROGRESS, profilePageItems });
+    const url =
+      appConfig.env === "dev" ? "/" : "api.where.you.are.hosting.this.app.com";
+    dispatch({ type: types.GET_PROFILEPAGEITEMS_INPROGRESS, profilePageItems });
 
     axios
       .get(url)
       .then((res) => {
         if (res.status === 200) {
           profilePageItems.push(_.get(res, "data", []));
-          dispatch({ type: types.GET_PROFILEPAGE_SUCCESS, profilePageItems });
+          dispatch({
+            type: types.GET_PROFILEPAGEITEMS_SUCCESS,
+            profilePageItems,
+          });
         } else {
-          dispatch({ type: types.GET_PROFILEPAGE_FAILURE, profilePageItems });
+          dispatch({
+            type: types.GET_PROFILEPAGEITEMS_FAILURE,
+            profilePageItems,
+          });
         }
       })
       .catch((error) => {
-        dispatch({ type: types.GET_PROFILEPAGE_FAILURE, error });
+        dispatch({ type: types.GET_PROFILEPAGEITEMS_FAILURE, error });
       });
   };
 };

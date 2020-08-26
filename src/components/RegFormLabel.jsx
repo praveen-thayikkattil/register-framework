@@ -4,7 +4,7 @@ class RegFormLabel extends Component {
   render() {
     return (
       <div className="control-label">
-        <label htmlFor={this.props.htmlFor}>{this.props.title}</label>
+        <label name={this.props.name}>{this.props.title}</label>
       </div>
     );
   }
