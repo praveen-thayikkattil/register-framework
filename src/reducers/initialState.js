@@ -1,4 +1,13 @@
 export default {
-  profilePageItems: [],
-  formFillPageItems: [],
+  // profilePageItems: null,
+  // formFillPageItems: null,
+  firstName: "",
+  lastName: "",
+  ageRange: "",
+  email: "",
+  tel: "",
+  state: "",
+  country: "",
+  address: "",
+  interests: [],
 };

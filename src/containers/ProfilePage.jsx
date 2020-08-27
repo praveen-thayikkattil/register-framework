@@ -10,8 +10,6 @@ class ProfilePageView extends Component {
   }
 
   render() {
-    console.log(this.props.profilePageItems);
-
     const inProgress = this.props.profilePageItems.inProgress;
     const isSuccess = this.props.profilePageItems.isSuccess;
 
@@ -26,7 +24,6 @@ class ProfilePageView extends Component {
 }
 
 function mapStateToProps(state, ownProps) {
-  console.log(state);
   return {
     profilePageItems: state.profilePageItems,
   };

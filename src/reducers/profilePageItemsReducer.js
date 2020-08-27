@@ -22,7 +22,7 @@ export default function profilePageItemsitems(
         ...state,
         inProgress: false,
         isSuccess: true,
-        items: action.profilePageItems[0],
+        items: action.profilePageItems,
       };
 
     case types.GET_PROFILEPAGEITEMS_FAILURE:

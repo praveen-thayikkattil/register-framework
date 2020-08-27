@@ -16,10 +16,6 @@ class FormFillPage extends Component {
     };
   }
 
-  componentDidMount() {
-    console.log(this.props);
-    console.log(this.state);
-  }
   render() {
     return (
       <header className="App-body register-page">

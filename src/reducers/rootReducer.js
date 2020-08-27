@@ -1,10 +1,11 @@
 import { combineReducers } from "redux";
-import profilePageItems from "./profilePageItemsReducer.js";
-import formFillPageItems from "./formFillPageItemsReducer.js";
+import firstName from "./firstNameReducer.js";
+// import formFillPageItems from "./formFillPageItemsReducer.js";
 
 const rootReducer = combineReducers({
-  profilePageItems,
-  formFillPageItems,
+  // profilePageItems,
+  // formFillPageItems,
+  firstName,
 });
 
 export default rootReducer;

@@ -22,7 +22,7 @@ export default function formFillPageItems(
         ...state,
         inProgress: false,
         isSuccess: true,
-        items: action.formFillPageItems[0],
+        items: action.formFillPageItems,
       };
 
     case types.GET_FORMFILLPAGEITEMS_FAILURE:

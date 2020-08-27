@@ -10,8 +10,6 @@ class FormFillPageView extends Component {
   }
 
   render() {
-    console.log(this.props.profilePageItems);
-
     const inProgress = this.props.formFillPageItems.inProgress;
     const isSuccess = this.props.formFillPageItems.isSuccess;
 

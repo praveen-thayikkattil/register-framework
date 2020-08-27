@@ -1,9 +1,13 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import Slider from "@material-ui/core/Slider";
 import FormControl from "@material-ui/core/FormControl";
 import Autocomplete from "@material-ui/lab/Autocomplete";
+
+import * as getFirstName from "../actions/FirstName";
 
 import RegFormLabel from "./RegFormLabel";
 const marks = [
@@ -42,11 +46,11 @@ class RegForm extends Component {
   }
 
   valuetext = (value) => {
-    return `${value}°C`;
+    // return `${value}°C`;
   };
 
   handleChange = (e) => {
-    console.log(e.target);
+    e.preventDefault();
     let newState = {};
 
     newState[e.target.name] = e.target.value;
@@ -55,6 +59,7 @@ class RegForm extends Component {
   };
 
   handleSubmit = (e, value) => {
+    e.preventDefault();
     console.log(e, value);
   };
 
@@ -62,10 +67,13 @@ class RegForm extends Component {
     return (
       <form
         className="registration-form"
-        onSubmit={(e) => this.handleSubmit(e)}
+        // onSubmit={(e) => this.handleSubmit(e)}
       >
         <fieldset className="fieldset-name fieldset">
-          <div className="firstName-wrapper input-wrapper">
+          <FormControl
+            variant="outlined"
+            className="firstName-wrapper input-wrapper"
+          >
             <RegFormLabel name="firstName" title="First Name" />
 
             <TextField
@@ -76,8 +84,9 @@ class RegForm extends Component {
               onChange={this.handleChange}
               name="firstName"
               value={this.state.firstName}
+              defaultValue={this.state.firstName}
             />
-          </div>
+          </FormControl>
 
           <div className="firstName-wrapper input-wrapper">
             <RegFormLabel name="lastName" title="Last Name" />
@@ -95,7 +104,10 @@ class RegForm extends Component {
         </fieldset>
 
         <fieldset className="ageRange-fieldset fieldset">
-          <div className="ageRange-wrapper input-wrapper">
+          <FormControl
+            variant="outlined"
+            className="ageRange-wrapper input-wrapper"
+          >
             <RegFormLabel name="ageRange" title="Age" />
 
             <Slider
@@ -107,11 +119,14 @@ class RegForm extends Component {
               marks={marks}
               className="age-range-slider"
             />
-          </div>
+          </FormControl>
         </fieldset>
 
         <fieldset className="fieldset-email fieldset">
-          <div className="email-wrapper input-wrapper">
+          <FormControl
+            variant="outlined"
+            className="email-wrapper input-wrapper"
+          >
             <RegFormLabel name="email" title="Email" />
 
             <TextField
@@ -123,11 +138,11 @@ class RegForm extends Component {
               name="email"
               value={this.state.email}
             />
-          </div>
+          </FormControl>
         </fieldset>
 
         <fieldset className="fieldset-tel fieldset">
-          <div className="tel-wrapper input-wrapper">
+          <FormControl variant="outlined" className="tel-wrapper input-wrapper">
             <RegFormLabel name="tel" title="Tel" />
 
             <TextField
@@ -139,7 +154,7 @@ class RegForm extends Component {
               name="tel"
               value={this.state.tel}
             />
-          </div>
+          </FormControl>
         </fieldset>
 
         <fieldset className="fieldset-states fieldset">
@@ -257,4 +272,19 @@ class RegForm extends Component {
   }
 }
 
-export default RegForm;
+// export default RegForm;
+
+function mapStateToProps(state, ownProps) {
+  console.log(">>>>>Here");
+  return {
+    firstName: state.firstName,
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    getFirstName: bindActionCreators(getFirstName, dispatch),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(RegForm);
